@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.lzmhc</groupId>
+        <artifactId>mvn-repo-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>oauth</artifactId>
+    <packaging>jar</packaging>
+    <name>lzmhc OAuth extension runtime</name>
+    <description>Runtime part of the lzmhc OAuth Quarkus extension</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-client-jackson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-jwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-jwt-build</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.lzmhc</groupId>
+            <artifactId>snowid</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>extension-descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
