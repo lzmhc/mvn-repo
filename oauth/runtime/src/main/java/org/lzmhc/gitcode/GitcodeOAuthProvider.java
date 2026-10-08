@@ -28,7 +28,7 @@ public class GitcodeOAuthProvider implements OAuthProvider {
     @Override
     public String getAuthorizeUri() {
         String state = SnowflakeIdUtil.nextId() + "";
-        OauthSingle.getInstance().put(state, "org/lzmhc/gitcode");
+        OauthSingle.getInstance().put(state, "gitcode");
         return authorize.url() +
                 "client_id="+authorize.clientId()+
                 "&redirect_uri="+authorize.redirectUri()+

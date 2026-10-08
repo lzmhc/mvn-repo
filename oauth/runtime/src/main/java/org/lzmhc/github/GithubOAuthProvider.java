@@ -28,7 +28,7 @@ public class GithubOAuthProvider implements OAuthProvider {
     @Override
     public String getAuthorizeUri(){
         String state = SnowflakeIdUtil.nextId() + "";
-        OauthSingle.getInstance().put(state, "org/lzmhc/github");
+        OauthSingle.getInstance().put(state, "github");
         return authorize.url() +
                 "client_id="+authorize.clientId()+
                 "&redirect_uri="+authorize.redirectUri()+

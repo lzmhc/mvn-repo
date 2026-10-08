@@ -23,8 +23,8 @@ public class OAuthProviderRegistry {
     @PostConstruct
     void init(){
         oAuthProviderMap = new HashMap<>();
-        oAuthProviderMap.put("org/lzmhc/github", githubOAuthProvider);
-        oAuthProviderMap.put("org/lzmhc/gitcode", gitcodeOAuthProvider);
+        oAuthProviderMap.put("github", githubOAuthProvider);
+        oAuthProviderMap.put("gitcode", gitcodeOAuthProvider);
     }
     public OAuthProvider getProvider(String name){
         return oAuthProviderMap.get(name);
